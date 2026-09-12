@@ -31,4 +31,11 @@ public class EstagioService {
     public List<Estagio> pesquisarPorEmpresa(String empresa) {
         return repository.findByEmpresa(empresa);
     }
+    public List<Estagio> listarPorDataCrescente() {
+        return repository.findAllByOrderByDataInicioAsc();
+    }
+
+    public List<Estagio> listarPorDataDecrescente() {
+        return repository.findAllByOrderByDataInicioDesc();
+    }
 }
