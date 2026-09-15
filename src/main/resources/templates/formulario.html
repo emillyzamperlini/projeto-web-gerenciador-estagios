@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang = "pt-br">
+    <head>
+        <title>Gerenciador de Estágios</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Cadastrar Estágio</h1>
+        <form action ="/estagios" method="post" th:object ="${estagio}">
+        <label> Empresa </label>
+        <input th:field = "*{empresa}">
+        <label>Cargo</label>
+        <input th:field = "*{cargo}">
+        <label>Data Inicio</label>
+        <input type = "date" th:field = "*{dataInicio}">
+        <label>Data Fim </label>
+        <input type = "date" th:field = "*{dataFim}">
+        <label>Status</label>
+        <input th:field = "*{status}">
+        <button>Cadastrar </button>
+        </form>
+    </body>
+</html>
+
+
+
+
+
+
+
