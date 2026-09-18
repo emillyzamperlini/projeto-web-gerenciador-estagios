@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <title>Gerenciador de Estágios</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <h1>Estágios Cadastrados</h1>
+        <table>
+            <tr>
+            <th>Empresa</th>
+            <th>Cargo</th>
+            <th>Data Início</th>
+            <th>Data Fim</th>
+            <th>Status</th>
+            </tr>
+            <tr th:each="estagio : ${estagios}">
+                <td th:text="${estagio.empresa}"></td>
+                <td th:text="${estagio.cargo}"></td>
+                <td th:text="${estagio.dataInicio}"></td>
+                <td th:text="${estagio.dataFim}"></td>
+                <td th:text="${estagio.status}"></td>
+                <td>
+                    <a th:href="@{/estagios/editar/{id}(id=${estagio.id})}">Editar</a>
+                    <a th:href="@{/estagios/excluir/{id}(id=${estagio.id})}">Excluir</a>
+                </td>
+            </tr>
+        </table>
+    </body>
+</html>
