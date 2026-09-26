@@ -6,8 +6,9 @@
     </head>
     <body>
         <h1>Cadastrar Estágio</h1>
-        <form action ="/estagios" method="post" th:object ="${estagio}">
-        <label> Empresa </label>
+        <form th:action="${estagio.id == null ? '/estagios' : '/estagios/editar'}" method="post" th:object="${estagio}">
+            <input type="hidden" th:field="*{id}">
+            <label> Empresa </label>
         <input th:field = "*{empresa}">
         <label>Cargo</label>
         <input th:field = "*{cargo}">

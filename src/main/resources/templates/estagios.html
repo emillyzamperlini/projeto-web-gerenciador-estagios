@@ -6,6 +6,12 @@
     </head>
     <body>
         <h1>Estágios Cadastrados</h1>
+        <form action="/estagios/pesquisar" method="get">
+            <input type="text" name="empresa" placeholder="Digite a empresa">
+            <button type="submit">Pesquisar</button>
+        </form>
+        <a href="/estagios/ordenar/crescente">Data mais antiga</a>
+        <a href="/estagios/ordenar/decrescente">Data mais recente</a>
         <table>
             <tr>
             <th>Empresa</th>
