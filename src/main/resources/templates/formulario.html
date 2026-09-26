@@ -1,31 +1,119 @@
 <!DOCTYPE html>
-<html lang = "pt-br">
-    <head>
-        <title>Gerenciador de Estágios</title>
-        <meta charset="UTF-8">
-    </head>
-    <body>
-        <h1>Cadastrar Estágio</h1>
-        <form th:action="${estagio.id == null ? '/estagios' : '/estagios/editar'}" method="post" th:object="${estagio}">
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Gerenciador de Estágios</title>
+
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1 th:text="${estagio.id == null ? 'Cadastrar Estágio' : 'Editar Estágio'}">
+            Cadastrar Estágio
+        </h1>
+
+        <p>Preencha as informações do estágio</p>
+    </div>
+
+
+    <div class="form-card">
+
+        <form th:action="${estagio.id == null ? '/estagios' : '/estagios/editar'}"
+              method="post"
+              th:object="${estagio}">
+
             <input type="hidden" th:field="*{id}">
-            <label> Empresa </label>
-        <input th:field = "*{empresa}">
-        <label>Cargo</label>
-        <input th:field = "*{cargo}">
-        <label>Data Inicio</label>
-        <input type = "date" th:field = "*{dataInicio}">
-        <label>Data Fim </label>
-        <input type = "date" th:field = "*{dataFim}">
-        <label>Status</label>
-        <input th:field = "*{status}">
-        <button>Cadastrar </button>
+
+
+            <div class="form-group">
+
+                <label for="empresa">Empresa</label>
+
+                <input id="empresa"
+                       type="text"
+                       th:field="*{empresa}"
+                       placeholder="Digite o nome da empresa">
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="cargo">Cargo</label>
+
+                <input id="cargo"
+                       type="text"
+                       th:field="*{cargo}"
+                       placeholder="Digite o cargo">
+
+            </div>
+
+
+            <div class="form-row">
+
+                <div class="form-group">
+
+                    <label for="dataInicio">Data de início</label>
+
+                    <input id="dataInicio"
+                           type="date"
+                           th:field="*{dataInicio}">
+
+                </div>
+
+
+                <div class="form-group">
+
+                    <label for="dataFim">Data de fim</label>
+
+                    <input id="dataFim"
+                           type="date"
+                           th:field="*{dataFim}">
+
+                </div>
+
+            </div>
+
+
+            <div class="form-group">
+
+                <label for="status">Status</label>
+
+                <input id="status"
+                       type="text"
+                       th:field="*{status}"
+                       placeholder="Ex.: Em andamento">
+
+            </div>
+
+
+            <div class="form-actions">
+
+                <a class="btn-voltar" href="/estagios">
+                    Voltar
+                </a>
+
+                <button class="btn-salvar"
+                        type="submit"
+                        th:text="${estagio.id == null ? 'Cadastrar estágio' : 'Salvar alterações'}">
+
+                    Cadastrar estágio
+
+                </button>
+
+            </div>
+
         </form>
-    </body>
+
+    </div>
+
+</div>
+
+</body>
+
 </html>
-
-
-
-
-
-
-
