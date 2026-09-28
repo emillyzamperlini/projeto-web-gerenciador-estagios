@@ -194,3 +194,51 @@ tr:hover {
 .btn-voltar:hover {
     background-color: #f3efff;
 }
+
+.ordenacao {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.ordenacao a {
+    color: #6c4ab6;
+    text-decoration: none;
+    padding: 8px 14px;
+    border: 1px solid #6c4ab6;
+    border-radius: 8px;
+}
+
+.ordenacao a:hover {
+    background-color: #f3efff;
+}
+.btn-editar {
+    background-color: #6c4ab6 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+    margin-right: 10px;
+}
+
+.btn-editar:hover {
+    background-color: #51358a !important;
+    color: white !important;
+}
+
+.btn-excluir {
+    background-color: #dc2626 !important;
+    color: white !important;
+    border: none !important;
+    padding: 8px 14px;
+    border-radius: 8px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.btn-excluir:hover {
+    background-color: #991b1b !important;
+    color: white !important;
+}
